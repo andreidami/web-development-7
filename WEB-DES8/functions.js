@@ -39,7 +39,7 @@ var number5 = Math.floor(Math.random() * 49);
 var number6 = Math.floor(Math.random() * 49);
 console.log(number1, number2, number3, number4, number5, number6);
 
-function generateWinningLotteryNumbers(numberOfResults) { //functie recursiva
+function generateWinningLotteryNumbers(numberOfResults) { 
     if(numberOfResults > 6) {
         return;
     }
