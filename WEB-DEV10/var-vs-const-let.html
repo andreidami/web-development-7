@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>var vs. let vs.const</title>
+
+        <script>
+           // const esto o varioabila care nu are voie sa isi schimbe valoarea,
+
+           const a = 1;
+          // const a = 2; error
+          let b = 2;
+          b = 3; //let e intre var si cons
+// with var is the same in the hole function
+          function varTest() {
+              var x = 1;
+              if (true) {
+                  var x = 2;
+                  console.log(x);//2
+              }
+              console.log(x);//2
+          }
+          varTest();
+
+
+          function letTest() {
+              let x = 1;
+              if (true) {
+                  let x = 2; //this is diferent
+                  console.log(x);//2
+              }
+              console.log(x);//cons si let important pt interviuri 
+          }
+          letTest();
+
+          
+
+        </script>
+    </head>
+</html>
