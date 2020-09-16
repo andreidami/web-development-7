@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finding in dom</title>
+        <style>
+            .flex-container {
+                display: flex;
+                width: 90vw;
+                justify-content: center;
+            }
+            .flex-items {
+                width: 100px;
+                height: 100px;
+                background-color: teal;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="my-button">Click me!</button>
+        <a href="google.com">Google</a>
+        <a href="facebooc.com">Facebook</a>
+        <div class="flex-container">
+            <div class="flex-items"></div>
+            <div class="flex-items"></div>
+            <div class="flex-items"></div>
+        </div>
+        <script>
+            const button = document.getElementById("my-button");
+            console.log(button);
+
+
+            button.innerText = "now dont click me!"
+            const anchors = document.getElementsByTagName("a");
+
+            console.log(anchors)
+            const flexItems = document.getElementsByClassName("flex-items");
+            console.log(flexItems)
+
+            for (let index = 0; index < flexItems.length; index++){flexItems[index].style.backgroundColor = "red";}
+
+            const flexContainer = document.getElementsByClassName("flex-container");
+            console.log(flexContainer[0]);
+            // flexContainer[0].innerHTML = "<h1>here a have as imple text<h1>"; noot recomended
+
+            const newFlexItem = document.createElement("h1");//here u created a h1 tag element
+            newFlexItem.innerText = "New h1" //here we aded text to it
+            flexContainer[0].appendChild(newFlexItem);//append
+
+
+            flexContainer[0].removeChild(newFlexItem);//sau putem sterge flexItems[0,1 sau 2]
+            anchors[1].href = "https://www.zoomania.ro";
+            
+
+  
+            
+        </script>
+    </body>
+</html>

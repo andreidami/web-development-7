@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car game</title>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #car {
+                position: relative; 
+                width: 100px;
+                height: 150;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="car" src="./red-car.png" alt ="car"/>
+
+        <script>
+
+            const carElement = document.getElementById("car");
+            let x = 0;
+            let y = 0;
+
+            document.addEventListener("keydown", (event) => {
+                if (event.code === "ArrowLeft") {
+                    x = x - 10;
+                } else if(event.code === "ArrowRight"){
+                    x = x + 10;
+                }      else if(event.code === "ArrowUp") {
+                    y = y - 10;
+                }        else if(event.code === "ArrowDown") {
+                    y = y + 10;
+                }
+                
+                
+                
+                  carElement.style.left = x + "px";
+                  carElement.style.top = y + "px";
+
+            }) /* eveniment direct in document,event containes detailes about what hapent*/
+            
+        </script>
+    </body>
+</html>
