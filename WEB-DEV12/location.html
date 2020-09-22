@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location (url) manipulation</title>
+    </head>
+    <body>
+        <p>Location manipulation</p>
+        <button onclick="refresh()">Refresh page</button>
+        <script>
+            const href = window.location.href;
+            console.log("href/WholeUrle:", href);
+            
+            console.log("Hostname:", location.hostname);//pe ce domeniu este situl
+            console.log("Pathname",location.hostname);//este calea relativa catre pagina
+
+          //  location.assign("http://google.com");
+          //location.reload();
+          const refresh = () => {
+              location.reload();
+          };
+
+          
+
+        </script>
+    </body>
+</html>

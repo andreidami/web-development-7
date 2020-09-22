@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock with javascript timing event</title>
+    </head>
+    <body>
+        <h1 id="clock"></h1>
+        <button onclick="stopWatch()">Stop time</button>
+        <script>
+            const timeFunction = () => {
+                const clockElement = document.getElementById("clock");
+                const curentDate = new Date();
+                const curentTime = curentDate.toLocaleTimeString();
+                clockElement.innerText = curentTime
+            }
+           // window.setInterval()//
+            const timeInterval =  setInterval(timeFunction, 1000);//here timeFunction is past as a reference.timeFunction used like this is also called a callback
+            const stopWatch = () => {
+                clearInterval(timeInterval);
+
+            };
+
+            setTimeout(() => {
+                alert("time Passed");
+
+            }, 3000);
+
+        </script>
+    </body>
+</html>

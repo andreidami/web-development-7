@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storege</title>
+    </head>
+    <body>
+        <p id="localStorage"></p>
+        <input placeholder="password" id="password">
+        <script>
+            localStorage.setItem("username", "Adamian");
+            const username = localStorage.getItem("username");
+            document.getElementById("localStorage").innerText = username;
+            const passwordInput = document.getElementById("password")
+            passwordInput.addEventListener("input", (event) => {
+                
+                localStorage.setItem("password", event.target.value);
+            })
+            passwordInput.value = localStorage.getItem("password");
+
+            localStorage.removeItem("username")
+
+            sessionStorage.setItem("my temporary stuff","this is temporary");
+            console.log(sessionStorage.getItem("my temporary stuff"));
+
+
+
+        </script>
+        
+            
+    </body>
+</html>

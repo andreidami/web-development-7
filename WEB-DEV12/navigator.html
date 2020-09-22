@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nvigator object</title>
+    </head>
+    <body>
+        <p>navigator</p>
+        <script>
+            console.log(navigator.userAgent);//modalitate prin carene conectam la aplicatii
+            console.log(navigator.language);
+           // console.log(navigator.languages);
+            console.log(navigator.geolocation.getCurrentPosition((coordinates) => {
+                console.log(coordinates.coords);
+            }));
+        </script>
+    </body>
+</html>
