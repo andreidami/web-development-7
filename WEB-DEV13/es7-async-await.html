@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Promise i will understand
+        </title>
+    </head>
+    <body>
+        <h1>Waiting for phone</h1>
+        <script>
+              let isMomHappy = false;
+            //we created a promise
+
+            const willIGetNewPhone = new Promise((resolve, reject)=> { 
+                if (isMomHappy){
+                const phone = {
+                    brand: "nokia",
+                    name: "3310",
+                    color:"grey"
+                };
+            
+            resolve(phone);
+           } else {
+                const reason = new Error("MOM IS NOT HAPPY");
+                reject(reason);
+            }
+            });
+            //we consume a promise
+            const showOff = (phone) => {
+                return new Promise((resolve,reject) => {
+                    const message = `Hey frend, i have a new ${phone.color} ${phone.name} ${phone.brand}`
+                    resolve(message)
+                })
+            };
+
+            async function askMom() {
+                try {
+                    console.log("before asking mom");
+                const phone = await willIGetNewPhone;
+                const message = await showOff(phone);
+                console.log(message);
+                console.log("after asking mom");
+                } catch (error) {
+                    console.log(error.message); 
+                }
+              
+            }
+
+            (async () => {
+                await askMom();
+            })();
+
+
+
+        </script>
+        </body>
+        </html>
